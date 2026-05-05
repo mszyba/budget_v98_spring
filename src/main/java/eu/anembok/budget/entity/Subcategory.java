@@ -1,0 +1,31 @@
+package eu.anembok.budget.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "subcategory")
+public class Subcategory {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    private String name;
+
+//    // relacja do Category
+//    @ManyToOne
+//    @JoinColumn(name = "category_id")
+//    private Category category;
+//
+//    // relacja do Transaction
+//    @OneToMany(mappedBy = "subcategory")
+//    private List<Transaction> transactions;
+}
