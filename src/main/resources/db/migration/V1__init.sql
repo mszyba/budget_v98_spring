@@ -23,3 +23,14 @@ CREATE TABLE if not exists transactions (
     FOREIGN KEY (category_id)
     REFERENCES category(id)
 );
+
+CREATE TABLE if not exists bank_operation (
+                                id BIGINT NOT NULL AUTO_INCREMENT,
+                                operation_date DATE,
+                                description VARCHAR(500),
+                                account VARCHAR(255),
+                                bank_category VARCHAR(255),
+                                amount DECIMAL(15,2),
+                                currency VARCHAR(3),
+                                PRIMARY KEY (id)
+);
