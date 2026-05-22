@@ -9,7 +9,7 @@ CREATE TABLE if not exists subcategory (
                                category_id BIGINT NOT NULL
 );
 
-CREATE TABLE if not exists transaction (
+CREATE TABLE if not exists transactions (
                               id              BIGINT AUTO_INCREMENT PRIMARY KEY,
                               date            DATE           NOT NULL,
                               amount          DECIMAL(15,2)  NOT NULL,
@@ -18,5 +18,8 @@ CREATE TABLE if not exists transaction (
                               subcategory_id  BIGINT,
                               description     VARCHAR(500),
                               amount_foreign  DECIMAL(15,2),
-                              exchange_rate   DECIMAL(10,6)
+                              exchange_rate   DECIMAL(10,6),
+    CONSTRAINT fk_transaction_category
+    FOREIGN KEY (category_id)
+    REFERENCES category(id)
 );

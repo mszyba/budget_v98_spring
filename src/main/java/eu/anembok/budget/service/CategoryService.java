@@ -14,6 +14,10 @@ public class CategoryService {
 
     private CategoryRepository categoryRepository;
 
+    private Sort sortByIdAsc(){
+        return Sort.by(Sort.Direction.ASC, "id");
+    }
+
     public void save(Category category){
         categoryRepository.save(category);
     }
@@ -27,9 +31,6 @@ public class CategoryService {
         return categoryRepository.findAll(sortByIdAsc());
     }
 
-    private Sort sortByIdAsc(){
-        return Sort.by(Sort.Direction.ASC, "id");
-    }
 
     public Category getById(int id){
         return categoryRepository.getReferenceById(id);

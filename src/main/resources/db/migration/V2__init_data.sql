@@ -24,7 +24,7 @@ INSERT INTO subcategory (name, category_id) VALUES
                                                 ('Ubrania', 7);
 
 
-INSERT INTO transaction
+INSERT INTO transactions
 (date, amount, type, category_id, subcategory_id, description, amount_foreign, exchange_rate)
 VALUES
     ('2026-04-01', 45.50, 'EXPENSE', 1, 1, 'Obiad w restauracji', NULL, NULL),

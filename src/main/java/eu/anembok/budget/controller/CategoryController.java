@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Slf4j
-@CrossOrigin("http://localhost:8080")
+@CrossOrigin("http://localhost:8081")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/category")
@@ -32,7 +32,6 @@ public class CategoryController {
 
     @DeleteMapping("/{id}")
     void delete(@PathVariable int id){
-
         System.out.print("Delete category with id: " + id);
         categoryService.delete(id);
     }
